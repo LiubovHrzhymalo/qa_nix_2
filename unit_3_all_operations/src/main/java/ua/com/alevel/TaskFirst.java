@@ -1,41 +1,22 @@
 package ua.com.alevel;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class TaskFirst {
     public static void main(String[] args) {
-        System.out.println("Please, enter text");
-    }
+        Scanner text = new Scanner(System.in);
 
-    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-    String text = "";
+        System.out.print("Please, enter the text ");
+        String a = text.next();
 
-        try {
-            text = bufferedReader.readLine();
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
+        int sum = 0;
+
+        for (int i = 0; i < a.length(); i++) {
+            if (Character.isDigit(a.charAt(i))) {
+                sum = sum + Integer.parseInt(a.charAt(i) + "");
+            }
         }
-
-//        String newString = text.nextLine();
-
-    int result = 0;
-
-        for(
-    int i = 0; i<text.length();i++)
-
-    {
-
-        if (Character.isDigit(text.charAt(i))) {
-            result += Character.digit(text.charAt(i), 10);
-        }
-
-
-        System.out.println("Result = " + result);
-
+        System.out.println("Sum of numbers: " + sum);
     }
 }
-
-
 
