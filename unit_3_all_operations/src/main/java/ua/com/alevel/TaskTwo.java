@@ -4,8 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class TaskSecond {
-//    public void run() {
+public class TaskTwo {
+
+    //    public void run() {
 
         public static void main(String[] args) {
 
@@ -33,8 +34,7 @@ public class TaskSecond {
 
             }
         }
-
-}
+    }
 
 
 
