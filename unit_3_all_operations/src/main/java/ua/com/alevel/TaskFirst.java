@@ -3,20 +3,27 @@ package ua.com.alevel;
 import java.util.Scanner;
 
 public class TaskFirst {
-    public static void main(String[] args) {
-        Scanner text = new Scanner(System.in);
 
-        System.out.print("Please, enter the text ");
-        String a = text.next();
+    public static void main(String[] args){
 
-        int sum = 0;
+//    public void run() {
+            Scanner text = new Scanner(System.in);
 
-        for (int i = 0; i < a.length(); i++) {
-            if (Character.isDigit(a.charAt(i))) {
-                sum = sum + Integer.parseInt(a.charAt(i) + "");
+            System.out.print("Please, enter the text ");
+            String a = text.next();
+
+            int sum = 0;
+
+            for (int i = 0; i < a.length(); i++) {
+                if (Character.isDigit(a.charAt(i))) {
+                    sum = sum + Integer.parseInt(a.charAt(i) + "");
+                }
             }
+            System.out.println("Sum of numbers: " + sum);
         }
-        System.out.println("Sum of numbers: " + sum);
-    }
-}
+        }
+
+
+
+
 
