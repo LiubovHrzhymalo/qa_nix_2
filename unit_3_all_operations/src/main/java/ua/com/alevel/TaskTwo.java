@@ -5,14 +5,10 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class TaskTwo {
-
-    //    public void run() {
-
-        public static void main(String[] args) {
-
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Please, enter the text");
-            String a = scanner.nextLine();
+    public void run() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Please, enter the text");
+        String a = scanner.nextLine();
 
             Map<Character, Integer> symbols = new HashMap<>();
             for (int i = 0; i < a.length(); i++) {
