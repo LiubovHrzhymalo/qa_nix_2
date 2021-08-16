@@ -3,8 +3,8 @@ package ua.com.alevel;
 import java.util.Scanner;
 
 public class StringMain {
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
         StringRevers stringReverse = new StringRevers();
         Scanner text = new Scanner(System.in);
         System.out.print("Please, enter the text ");
@@ -15,7 +15,5 @@ public class StringMain {
         String b = text.nextLine();
         System.out.println(stringReverse.reverseTwo(b, true));
         System.out.println();
-
-
     }
 }

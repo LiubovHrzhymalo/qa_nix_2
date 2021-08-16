@@ -12,6 +12,7 @@ public class StringRevers {
         }
         return result;
     }
+
     public String reverseTwo(String a, boolean reverseTwo) {
         String[] array = a.split(" ");
        String result = "";
@@ -20,11 +21,4 @@ public class StringRevers {
         }
         return result;
    }
-
-
-
-
 }
-
-
-
