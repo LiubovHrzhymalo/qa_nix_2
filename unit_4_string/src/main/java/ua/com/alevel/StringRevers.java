@@ -1,8 +1,8 @@
 package ua.com.alevel;
 
-import java.util.Scanner;
-
 public class StringRevers {
+
+    private String dest;
 
     public  String reverseOne(String a) {
         char[] array = a.toCharArray();
@@ -20,6 +20,21 @@ public class StringRevers {
         }
         return result;
    }
+
+    public  String reverseThree(String c, String a) {
+       String reversedDest = reverseDest(dest);
+        String result = a.replace(dest, reversedDest);
+        return result;
+}
+    String reverseDest(String dest) {
+        int stringLength = dest.length();
+        String result = "";
+        for (int i = 0; i < stringLength; i++) {
+            result = dest.charAt(i) + result;
+        }
+        return result;
+    }
+
 
 
 
