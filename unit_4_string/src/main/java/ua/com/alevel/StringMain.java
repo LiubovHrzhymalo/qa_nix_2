@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class StringMain {
     public static void main(String[] args) {
-
         StringRevers stringReverse = new StringRevers();
         Scanner text = new Scanner(System.in);
         System.out.print("Please, enter the text: ");
@@ -15,14 +14,9 @@ public class StringMain {
         System.out.println(stringReverse.reverseTwo(b, true));
         System.out.print("Please, enter the text: ");
         String c = text.nextLine();
-        System.out.print("Please, enter the text2: ");
+        System.out.print("Please, enter the dest-text : ");
         String d = text.nextLine();
-        System.out.println(stringReverse.reverseThree (c,d));
-
-
-
-
-
+        System.out.println(stringReverse.reverseThree(c, d));
 
 
     }
