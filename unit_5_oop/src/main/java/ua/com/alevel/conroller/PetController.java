@@ -2,12 +2,10 @@ package ua.com.alevel.conroller;
 
 import ua.com.alevel.entity.Owner;
 import ua.com.alevel.entity.service.PetService;
-//import ua.com.alevel.service.PetService;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.List;
 
 public class PetController {
 
@@ -34,11 +32,11 @@ public class PetController {
 
     private void runNavigation() {
         System.out.println();
-        System.out.println("if you want create user, please enter 1");
-        System.out.println("if you want update user, please enter 2");
-        System.out.println("if you want delete user, please enter 3");
-        System.out.println("if you want findById user, please enter 4");
-        System.out.println("if you want findAll user, please enter 5");
+        System.out.println("if you want create owner and pet, please enter 1");
+        System.out.println("if you want update owner and pet, please enter 2");
+        System.out.println("if you want delete owner and pet, please enter 3");
+        System.out.println("if you want findById pet, please enter 4");
+        System.out.println("if you want findAll pet, please enter 5");
         System.out.println("if you want exit, please enter 0");
         System.out.println();
     }
@@ -56,15 +54,14 @@ public class PetController {
 
     private void create(BufferedReader reader) {
         System.out.println("UserController.create");
-        try {
-            System.out.println("Please, enter your name");
-            String name = reader.readLine();
-            System.out.println("Please, enter your age");
+        try {System.out.println("Please, enter breed of animal");
+            String breed = reader.readLine();
+            System.out.println("Please, enter pet's age");
             String ageString = reader.readLine();
             int age = Integer.parseInt(ageString);
             Owner owner = new Owner();
+            owner.setBreedOfanimal(breed);
             owner.setAge(age);
-            owner.setNamePet(name);
             petService.creat(owner);
         } catch (IOException e) {
             System.out.println("problem: = " + e.getMessage());
@@ -76,15 +73,15 @@ public class PetController {
         try {
             System.out.println("Please, enter id");
             String id = reader.readLine();
-            System.out.println("Please, enter your name");
-            String name = reader.readLine();
-            System.out.println("Please, enter your age");
+            System.out.println("Please, enter breed of animal");
+            String breed = reader.readLine();
+            System.out.println("Please, enter pet's age");
             String ageString = reader.readLine();
             int age = Integer.parseInt(ageString);
             Owner owner = new Owner();
             owner.setId(id);
             owner.setAge(age);
-            owner.setNamePet(name);
+            owner.setBreedOfanimal(breed);
             petService.update(owner);
         } catch (IOException e) {
             System.out.println("problem: = " + e.getMessage());
@@ -116,9 +113,10 @@ public class PetController {
 
     private void findAll(BufferedReader reader) {
         System.out.println("UserController.findAll");
-        List<Owner> pets = petService.findAll();
-        for (Owner pet : pets) {
-            System.out.println("owner = " + pet);
+        Owner[] owners= petService.findAll();
+
+        for (Owner  owner: owners) {
+            System.out.println("owner = " + owner);
         }
     }
 }

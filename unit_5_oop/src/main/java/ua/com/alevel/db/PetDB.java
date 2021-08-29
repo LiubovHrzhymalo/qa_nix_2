@@ -2,41 +2,66 @@ package ua.com.alevel.db;
 
 import ua.com.alevel.entity.Owner;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 import java.util.UUID;
 
 public class PetDB {
-    private List<Owner> pets = new ArrayList<>();
+    private Owner[] owners = new Owner[0];
 
     public void creat(Owner owner) {
         owner.setId(generateId());
-        pets.add(owner);
+        Owner[] owArray = new Owner[owners.length];
+        for (int i = 0; i < owners.length; i++) {
+            owArray[i] = owners[i];
+        }
+
+        owners = new Owner[owners.length + 1];
+        for (int i = 0; i < owArray.length; i++) {
+            owners[i] = owArray[i];
+        }
+        owners[owners.length - 1] = owner;
     }
 
     public void update(Owner owner) {
-        Owner current = pets.stream().filter(o -> o.getId().equals(owner.getId())).findFirst().get();
-//        current.setPet(owner.getPet());
-        current.setPet(owner.getPet());
-        current.setNamePet(owner.getNamePet());
+        Owner current = Arrays.stream(owners).filter(o -> o.getId().equals(owner.getId())).findFirst().get();
+        current.setBreedOfanimal(owner.getBreedOfanimal());
         current.setAge(owner.getAge());
     }
 
     public void delete(String id) {
-        pets.removeIf(owner -> owner.getId().equals(id));
+        if (id != null) {
+            int indexOfId = -1;
+
+            for (int i = 0; i < indexOfId; i++){
+                if (owners[i].getId().equals(id)){
+                    indexOfId=1;
+                    break;
+                }
+            }
+            if (indexOfId>-1){
+                Owner[] newArray=new Owner[owners.length-1];
+                for (int i=0; i<indexOfId; i++){
+                    newArray[i]=owners[i];
+                }
+                for (int i=indexOfId+1; i<owners.length;i++){
+                    newArray[i-1]=owners[i];
+                }
+                owners=newArray;
+            }
+        }
     }
 
     public Owner findById(String id) {
-        return pets.stream().filter(o -> o.getId().equals(id)).findFirst().get();
+        return Arrays.stream(owners).filter(o -> o.getId().equals(id)).findFirst().get();
     }
 
-    public List<Owner> findAll() {
-        return pets;
+    public Owner[] findAll(){
+        return Arrays.copyOf(owners,owners.length);
     }
 
     private String generateId() {
         String id = UUID.randomUUID().toString();
-        if (pets.stream().anyMatch(owner -> owner.getId().equals(id))) {
+        if (Arrays.stream(owners).anyMatch(owner -> owner.getId().equals(id))) {
             return generateId();
 
         }

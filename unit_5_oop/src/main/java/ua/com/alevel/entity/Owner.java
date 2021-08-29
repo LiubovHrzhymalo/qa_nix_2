@@ -1,10 +1,18 @@
 package ua.com.alevel.entity;
 
 public class Owner {
+
     private String id;
-    private String pet;
-    private String namePet;
+    private String breedOfanimal;
     private int age;
+
+    public String getBreedOfanimal() {
+        return breedOfanimal;
+    }
+
+    public void setBreedOfanimal(String breedOfanimal) {
+        this.breedOfanimal = breedOfanimal;
+    }
 
     public String getId() {
 
@@ -16,23 +24,14 @@ public class Owner {
         this.id = id;
     }
 
-//    public String getPet(String pet) {
-//        return this.pet;
-//    }
-
-    public void setPet(String pet) {
-
-        this.pet = pet;
-    }
-
     public String getNamePet() {
 
-        return namePet;
+        return breedOfanimal;
     }
 
     public void setNamePet(String namePet) {
 
-        this.namePet = namePet;
+        this.breedOfanimal = namePet;
     }
 
     public int getAge() {
@@ -45,8 +44,4 @@ public class Owner {
         this.age = age;
     }
 
-
-    public String getPet() {
-        return this.pet;
-    }
 }

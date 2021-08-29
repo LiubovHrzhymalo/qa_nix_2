@@ -24,7 +24,9 @@ public class OwnerDao {
         return db.findById(id);
     }
 
-    public List<Owner> findAll() {
+    public Owner[] findAll(){
         return db.findAll();
     }
+
+
 }

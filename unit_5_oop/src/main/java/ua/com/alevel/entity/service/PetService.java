@@ -3,8 +3,6 @@ package ua.com.alevel.entity.service;
 import ua.com.alevel.dao.OwnerDao;
 import ua.com.alevel.entity.Owner;
 
-import java.util.List;
-
 public class PetService {
     private OwnerDao dao = new OwnerDao();
     public void creat(Owner owner) {
@@ -23,7 +21,9 @@ public class PetService {
         return dao.findById(id);
     }
 
-    public List<Owner> findAll() {
+    public Owner[] findAll(){
         return dao.findAll();
     }
+
+
 }
