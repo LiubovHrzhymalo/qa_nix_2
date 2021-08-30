@@ -6,6 +6,15 @@ public class Owner {
     private String breedOfanimal;
     private int age;
 
+    @Override
+    public String toString() {
+        return "Owner{" +
+                "id='" + id + '\'' +
+                ", breedOfanimal='" + breedOfanimal + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
     public String getBreedOfanimal() {
         return breedOfanimal;
     }

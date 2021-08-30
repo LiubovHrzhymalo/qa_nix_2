@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.UUID;
 
 public class PetDB {
-    private Owner[] owners = new Owner[10];
+    private Owner[] owners = new Owner[0];
 
     public void creat(Owner owner) {
         owner.setId(generateId());
