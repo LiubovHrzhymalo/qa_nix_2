@@ -5,7 +5,6 @@ import com.google.gson.*;
 import org.apache.commons.io.FileUtils;
 import ua.com.alevel.config.FileType;
 import ua.com.alevel.entity.Owner;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;

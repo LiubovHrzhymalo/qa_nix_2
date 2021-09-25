@@ -11,8 +11,8 @@
 	<groupId>ua.com.alevel</groupId>
 	<artifactId>unit_7_patterns</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>unit_7_patterns</name>
-	<description>unit_7_patterns</description>
+	<name>unit_7_patterns2</name>
+	<description>unit_7_patterns2</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>

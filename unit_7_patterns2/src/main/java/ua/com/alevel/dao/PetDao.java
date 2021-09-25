@@ -9,8 +9,6 @@ import java.util.UUID;
 public abstract class PetDao {
     protected List<Pet> pets = new ArrayList<>();
 
-    OwnerDao ownerDao = new CsvOwnerDao();
-
     protected void createPet(Pet pet) {
         pet.setId(generateId());
         pets.add(pet);
