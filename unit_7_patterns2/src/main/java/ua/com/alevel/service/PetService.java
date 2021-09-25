@@ -11,8 +11,8 @@ import java.util.List;
 @Service
 
 public class PetService implements Service<Pet> {
-    private final CrudDao<Pet> petDao = DaoFactory.getInstance().getPetDao();
-    private final CrudDao<Owner> ownerDao = DaoFactory.getInstance().getOwnerDao();
+    private final AllDao<Pet> petDao = DaoFactory.getInstance().getPetDao();
+    private final AllDao<Owner> ownerDao = DaoFactory.getInstance().getOwnerDao();
 
     @Override
     public void create(Pet pet) {
