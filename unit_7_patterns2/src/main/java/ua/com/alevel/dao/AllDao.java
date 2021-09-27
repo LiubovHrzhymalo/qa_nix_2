@@ -4,7 +4,7 @@ import ua.com.alevel.entity.BaseEntity;
 
 import java.util.List;
 
-public  interface AllDao<E extends BaseEntity> {
+public interface AllDao<E extends BaseEntity> {
     void create(E e);
     void update(E e);
     void delete(String id);

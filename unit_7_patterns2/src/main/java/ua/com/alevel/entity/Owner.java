@@ -25,7 +25,7 @@ public class Owner extends BaseEntity {
         this.lastName = lastName;
     }
 
-    public boolean isVisible() {
+    public boolean getIsVisible() {
         return isVisible;
     }
 

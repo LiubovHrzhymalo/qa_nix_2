@@ -3,7 +3,7 @@ import ua.com.alevel.entity.BaseEntity;
 
 import java.util.List;
 
-public class Service<E extends BaseEntity> {
+public interface CrudService<E extends BaseEntity> {
     void create(E e);
     void update(E e);
     void delete(String id);

@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.*;
 import ua.com.alevel.dto.OwnerRequestDto;
 import ua.com.alevel.dto.OwnerResponseDto;
 import ua.com.alevel.dto.ResponseContainer;
-import ua.com.alevel.entity.Owner;
 import ua.com.alevel.facade.OwnerFacade;
 
 import java.util.List;
@@ -16,7 +15,7 @@ public class OwnerController {
 
     private final OwnerFacade ownerFacade;
 
-    public OwnerController(OwnerFacade authorFacade) {
+    public OwnerController(OwnerFacade ownerFacade) {
         this.ownerFacade = ownerFacade;
     }
 

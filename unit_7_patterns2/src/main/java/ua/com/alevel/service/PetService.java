@@ -2,6 +2,7 @@ package ua.com.alevel.service;
 
 import org.springframework.stereotype.Service;
 import ua.com.alevel.config.DaoFactory;
+import ua.com.alevel.dao.AllDao;
 import ua.com.alevel.dao.CrudDao;
 import ua.com.alevel.entity.Owner;
 import ua.com.alevel.entity.Pet;
@@ -9,15 +10,14 @@ import ua.com.alevel.entity.Pet;
 import java.util.List;
 
 @Service
-
-public class PetService implements Service<Pet> {
+public class PetService implements CrudService<Pet> {
     private final AllDao<Pet> petDao = DaoFactory.getInstance().getPetDao();
     private final AllDao<Owner> ownerDao = DaoFactory.getInstance().getOwnerDao();
 
     @Override
     public void create(Pet pet) {
         petDao.create(pet);
-        List<String> petIds = pet.getOwnerIds();
+        List<String> ownerIds = pet.getOwnerIds();
         for (String ownerId : ownerIds) {
             ownerDao.link(ownerId, pet.getId());
         }
