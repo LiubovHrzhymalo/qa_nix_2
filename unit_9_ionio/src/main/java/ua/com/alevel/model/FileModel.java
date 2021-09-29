@@ -1,9 +1,12 @@
 package ua.com.alevel.model;
 
+import com.sun.xml.internal.bind.v2.schemagen.xmlschema.ExtensionType;
+import com.sun.xml.internal.ws.api.model.ExceptionType;
+
 public class FileModel {
     private String contentFile;
     private String nameFile;
-    private Type type;
+    private ExceptionType type;
 
     public String getNameFile() {
         return nameFile;
@@ -21,11 +24,11 @@ public class FileModel {
         this.contentFile = contentFile;
     }
 
-    public Type getType() {
-        return type;
+    public ExtensionType getExtensionType() {
+        return extensionType;
     }
 
-    public void setType(Type type) {
-        this.type = type;
+    public void setExtensionType(ExtensionType extensionType) {
+        this.extensionType = extensionType;
     }
 }

@@ -1,0 +1,3 @@
+Duplicates are: {}
+Palindromes are: {level=1}
+Number of Sentences: 1

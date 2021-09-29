@@ -5,7 +5,7 @@ public enum TypeFile {
 
     private final String type;
 
-    Type(String type) {
+    TypeFile(String type) {
         this.type = type;
     }
 

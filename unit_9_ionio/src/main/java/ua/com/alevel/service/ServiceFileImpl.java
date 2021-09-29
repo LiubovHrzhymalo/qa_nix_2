@@ -1,7 +1,7 @@
 package ua.com.alevel.service;
 
 import ua.com.alevel.model.FileModel;
-import ua.com.alevel.model.FileType;
+import ua.com.alevel.model.TypeFile;
 import java.io.*;
 import java.text.BreakIterator;
 import java.util.*;
@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class ServiceFileImpl implements ServiceFile{
     @Override
     public void create(FileModel fileModel) {
-        File file = new File(fileModel.getNameFile() + "." + fileModel.getExtensionType().getExtension());
+        File file = new File(fileModel.getNameFile() );
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))) {
             bufferedWriter.write(fileModel.getContentFile());
             bufferedWriter.flush();
@@ -40,17 +40,22 @@ public class ServiceFileImpl implements ServiceFile{
 
     @Override
     public String getOutput(String input) {
-        String output = "\nThe text includes:\n";
-        Map<String, Integer> wordsCount = Text.getWordsCount(input);
-        for (String key : wordsCount.keySet()) {
-            output = output.concat(key + " - " + wordsCount.get(key) + "\n");
-        }
-        output = output.concat("\nPalindromes:\n");
-        HashSet<String> palindromes = Text.getPalindrome(input);
-        for (String palindrome : palindromes) {
-            output = output.concat(palindrome + " - " + wordsCount.get(palindrome) + "\n");
-        }
-        output = output.concat("\nTotal number of  sentences: " + Text.getSentenceCount(input));
-        return output;
+        return null;
     }
+
+//    @Override
+//    public String getOutput(String input) {
+//        String output = "\nThe text includes:\n";
+//        Map<String, Integer> wordsCount = Text.getWordsCount(input);
+//        for (String key : wordsCount.keySet()) {
+//            output = output.concat(key + " - " + wordsCount.get(key) + "\n");
+//        }
+//        output = output.concat("\nPalindromes:\n");
+//        HashSet<String> palindromes = Text.getPalindrome(input);
+//        for (String palindrome : palindromes) {
+//            output = output.concat(palindrome + " - " + wordsCount.get(palindrome) + "\n");
+//        }
+//        output = output.concat("\nTotal number of  sentences: " + Text.getSentenceCount(input));
+//        return output;
+//    }
 }

@@ -1,5 +1,6 @@
 package ua.com.alevel.Controller;
 
+import com.sun.xml.internal.bind.v2.schemagen.xmlschema.ExtensionType;
 import ua.com.alevel.model.TypeFile;
 import ua.com.alevel.model.FileModel;
 import ua.com.alevel.service.ServiceFile;
@@ -11,8 +12,8 @@ public class ControllerFile {
         String input = service.read("input.txt");
         FileModel file = new FileModel();
         file.setNameFile("output");
-        file.setType(Type.TXT);
-        file.setContent(service.getOutput(input));
+        file.setExtensionType(ExtensionType.TXT);
+        file.setContentFile(service.getOutput(input));
         service.create(file);
     }
 }
